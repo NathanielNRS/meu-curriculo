@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo de Nathaniel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="media/foto.jpg" alt="Foto de Nathaniel" class="profile-pic">
+            <h1>Nathaniel</h1>
+            <p class="subtitle">Estudante de Ciência da Computação</p>
+        </header>
+
+        <section class="about">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Meu nome é Nathaniel, tenho 21 anos e atualmente estou estudando Ciências da Computação. Estou buscando oportunidades para aplicar meus conhecimentos e crescer profissionalmente nesa área.</p>
+        </section>
+
+        <section class="details">
+            <div class="info-card">
+                <h3>Informações Pessoais</h3>
+                <ul>
+                    <li><strong>Idade:</strong> 21 anos</li>
+                    <li><strong>Nascimento:</strong> 31/10/2003</li>
+                    <li><strong>Estado Civil:</strong> Solteiro</li>
+                    <li><strong>Situação Profissional:</strong> Desempregado</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>Estudante de Ciência da Computação</li>
+                    <li>Conhecimento básico de inglês</li>
+                    <li>HTML e CSS básico</li>
+                    <li>Lógica de programação</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="canvas-section">
+            <h3>Meu Progresso</h3>
+            <canvas id="grafico" width="250" height="100"></canvas>
+            <p class="canvas-caption">Representação do meu aprendizado em programação</p>
+        </section>
+
+        <footer>
+            <h3>Contato</h3>
+            <p>Entre em contato comigo:</p>
+            <a href="mailto:nathanielnrs@hotmail.com" class="contact-link">nathanienrsl@hotmail.com</a>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("grafico");
+        const ctx = canvas.getContext("2d");
+        
+        // Desenha um gráfico de progresso
+        ctx.fillStyle = "#4CAF50";
+        ctx.fillRect(10, 10, 80, 80); // Conhecimento atual
+        
+        ctx.fillStyle = "#2196F3";
+        ctx.fillRect(100, 10, 40, 80); // Objetivos de curto prazo
+        
+        ctx.fillStyle = "#FFC107";
+        ctx.fillRect(150, 10, 90, 80); // Potencial de crescimento
+        
+        ctx.fillStyle = "#000";
+        ctx.font = "10px Arial";
+        ctx.fillText("Atual", 15, 100);
+        ctx.fillText("Meta", 105, 100);
+        ctx.fillText("Potencial", 155, 100);
+    </script>
+</body>
+</html>
