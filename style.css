@@ -1,3 +1,4 @@
+/* Estilos base */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -5,6 +6,19 @@ body {
     background-color: #f0f2f5;
     color: #333;
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.dark-theme .container,
+.dark-theme .info-card {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .container {
@@ -81,15 +95,57 @@ h3 {
     margin-bottom: 8px;
 }
 
-.canvas-section {
-    text-align: center;
+.contact-form {
     margin: 30px 0;
 }
 
-.canvas-caption {
-    font-size: 0.9em;
-    color: #7f8c8d;
+.interactive-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
     margin-top: 10px;
+    transition: all 0.3s;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.interactive-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#formMessage {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
 }
 
 footer {
@@ -99,19 +155,21 @@ footer {
     border-top: 1px solid #eee;
 }
 
-.contact-link {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+.social-links a {
+    margin: 0 10px;
+    color: #4CAF50;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+    font-weight: bold;
 }
 
-.contact-link:hover {
-    background-color: #45a049;
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+#lastVisit {
+    font-size: 0.8em;
+    color: #7f8c8d;
+    margin-top: 10px;
 }
 
 /* Responsividade */
@@ -122,5 +180,10 @@ footer {
     
     .details {
         flex-direction: column;
+    }
+    
+    .interactive-btn {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }

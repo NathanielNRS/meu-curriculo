@@ -3,76 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo de Nathaniel</title>
+    <title>Currículo Interativo - Nathaniel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="media/foto.jpg" alt="Foto de Nathaniel" class="profile-pic">
-            <h1>Nathaniel</h1>
-            <p class="subtitle">Estudante de Ciência da Computação</p>
-        </header>
+    <header>
+        <img src="media/foto.jpg" alt="Foto de Nathaniel" class="profile-pic" id="profileImage">
+        <h1 id="userName">Nathaniel</h1>
+        <p class="subtitle">Estudante de Ciência da Computação</p>
+    </header>
 
+    <main>
         <section class="about">
             <h2>Sobre Mim</h2>
-            <p>Olá! Meu nome é Nathaniel, tenho 21 anos e atualmente estou estudando Ciências da Computação. Estou buscando oportunidades para aplicar meus conhecimentos e crescer profissionalmente nesa área.</p>
+            <p id="aboutText">Olá! Meu nome é Nathaniel, tenho 21 anos, nasci em 31/10/2003 e atualmente estou estudando Ciência da Computação. Estou em busca de oportunidades para aplicar meus conhecimentos e crescer profissionalmente na área de tecnologia.</p>
+            <button id="changeThemeBtn" class="interactive-btn">Mudar Tema</button>
         </section>
 
         <section class="details">
-            <div class="info-card">
+            <article class="info-card">
                 <h3>Informações Pessoais</h3>
-                <ul>
-                    <li><strong>Idade:</strong> 21 anos</li>
+                <ul id="personalInfo">
+                    <li><strong>Idade:</strong> <span id="age">21</span> anos</li>
                     <li><strong>Nascimento:</strong> 31/10/2003</li>
                     <li><strong>Estado Civil:</strong> Solteiro</li>
                     <li><strong>Situação Profissional:</strong> Desempregado</li>
                 </ul>
-            </div>
+                <button id="updateAgeBtn" class="interactive-btn">Atualizar Idade</button>
+            </article>
 
-            <div class="info-card">
+            <article class="info-card">
                 <h3>Habilidades</h3>
-                <ul>
+                <ul id="skillsList">
                     <li>Estudante de Ciência da Computação</li>
-                    <li>Conhecimento básico de inglês</li>
+                    <li>Conhecimento intermediário de inglês</li>
                     <li>HTML e CSS básico</li>
                     <li>Lógica de programação</li>
+                    <li>JavaScript básico</li>
                 </ul>
-            </div>
+                <button id="addSkillBtn" class="interactive-btn">Adicionar Habilidade</button>
+                <button id="sortSkillsBtn" class="interactive-btn">Ordenar Habilidades</button>
+            </article>
         </section>
 
-        <section class="canvas-section">
-            <h3>Meu Progresso</h3>
-            <canvas id="grafico" width="250" height="100"></canvas>
-            <p class="canvas-caption">Representação do meu aprendizado em programação</p>
+        <section class="contact-form">
+            <h3>Entre em Contato</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Seu Nome:</label>
+                    <input type="text" id="name" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">Seu E-mail:</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" placeholder="Digite sua mensagem"></textarea>
+                </div>
+                <button type="submit" class="interactive-btn">Enviar Mensagem</button>
+            </form>
+            <div id="formMessage"></div>
         </section>
+    </main>
 
-        <footer>
-            <h3>Contato</h3>
-            <p>Entre em contato comigo:</p>
-            <a href="mailto:nathanielnrs@hotmail.com" class="contact-link">nathanienrsl@hotmail.com</a>
-        </footer>
-    </div>
+    <footer>
+        <div class="social-links">
+            <a href="#" id="linkedinLink">LinkedIn</a>
+            <a href="mailto:nathaniel@exemplo.com" id="emailLink">E-mail</a>
+            <a href="#" id="githubLink">GitHub</a>
+        </div>
+        <p id="visitCounter">Visitas: Carregando...</p>
+        <p id="lastVisit"></p>
+    </footer>
 
-    <script>
-        const canvas = document.getElementById("grafico");
-        const ctx = canvas.getContext("2d");
-        
-        // Desenha um gráfico de progresso
-        ctx.fillStyle = "#4CAF50";
-        ctx.fillRect(10, 10, 80, 80); // Conhecimento atual
-        
-        ctx.fillStyle = "#2196F3";
-        ctx.fillRect(100, 10, 40, 80); // Objetivos de curto prazo
-        
-        ctx.fillStyle = "#FFC107";
-        ctx.fillRect(150, 10, 90, 80); // Potencial de crescimento
-        
-        ctx.fillStyle = "#000";
-        ctx.font = "10px Arial";
-        ctx.fillText("Atual", 15, 100);
-        ctx.fillText("Meta", 105, 100);
-        ctx.fillText("Potencial", 155, 100);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
